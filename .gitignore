@@ -1,0 +1,7 @@
+*.log
+Thumbs.db
+.DS_Store
+release/**/KSA_Quick_ID_Inspector_v*.cs
+release/**/KSA_Quick_ID_Inspector_final.cs
+dist/
+.release-staging/

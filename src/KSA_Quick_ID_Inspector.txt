@@ -1,0 +1,169 @@
+// KSA Quick ID Inspector
+// Version 1.0.0
+// Lightweight model information for GTA San Andreas 1.0.
+// Type KSAID during gameplay to enable or disable the display.
+
+
+{$CLEO .cs}
+
+script_name {name} "KSA_QID"
+
+int enabled = true
+int target
+int modelId
+int health
+int vehicle
+int vehicleModel
+int vehicleHealth
+int toggleNotice = 0
+shortString vehicleKey
+
+wait {time} 2000
+use_text_commands {state} true
+add_text_label {dynamicKey} 'KSA_INT' {text} "KSA  QUICK ID INSPECTOR"
+add_text_label {dynamicKey} 'KSA_TOG' {text} "TYPE KSAID TO TOGGLE"
+add_text_label {dynamicKey} 'KSA_PED' {text} "KSA  PED INSPECTOR"
+add_text_label {dynamicKey} 'KSA_VEH' {text} "KSA  VEHICLE INSPECTOR"
+add_text_label {dynamicKey} 'KSA_MOD' {text} "MODEL ID  ~1~"
+add_text_label {dynamicKey} 'KSA_HP' {text} "HEALTH  ~1~"
+add_text_label {dynamicKey} 'KSA_ON' {text} "ENABLED"
+add_text_label {dynamicKey} 'KSA_OFF' {text} "DISABLED"
+TimerA = 0
+
+while true
+    wait {time} 0
+
+    if
+        test_cheat {input} "KSAID"
+    then
+        if
+            enabled == true
+        then
+            enabled = false
+            toggleNotice = 2
+            TimerB = 0
+        else
+            enabled = true
+            toggleNotice = 1
+            TimerB = 0
+        end
+    end
+
+    if and
+        toggleNotice <> 0
+        TimerB < 1800
+    then
+        set_text_font {font} Font.Menu
+        set_text_proportional {state} true
+        set_text_centre {state} true
+        set_text_centre_size {width} 640.0
+        set_text_background {state} false
+        set_text_edge {size} 2 {rgb} 16 20 30 {alpha} 230
+        set_text_scale {width} 0.36 {height} 1.35
+        set_text_colour {rgb} 166 227 233 {alpha} 255
+        display_text {pos} 320.0 9.0 {key} 'KSA_INT'
+
+        set_text_scale {width} 0.32 {height} 1.18
+        if
+            toggleNotice == 1
+        then
+            set_text_centre {state} true
+            set_text_centre_size {width} 640.0
+            set_text_colour {rgb} 183 228 199 {alpha} 255
+            display_text {pos} 320.0 32.0 {key} 'KSA_ON'
+        else
+            set_text_centre {state} true
+            set_text_centre_size {width} 640.0
+            set_text_colour {rgb} 244 181 184 {alpha} 255
+            display_text {pos} 320.0 32.0 {key} 'KSA_OFF'
+        end
+    else
+        toggleNotice = 0
+    end
+
+    if
+        enabled == false
+    then
+        continue
+    end
+
+    if
+        not is_player_playing $player1
+    then
+        continue
+    end
+
+    if
+        TimerA < 4000
+    then
+        set_text_font {font} Font.Menu
+        set_text_proportional {state} true
+        set_text_centre {state} false
+        set_text_wrapx {width} 640.0
+        set_text_background {state} false
+        set_text_edge {size} 2 {rgb} 16 20 30 {alpha} 230
+        set_text_scale {width} 0.36 {height} 1.35
+        set_text_colour {rgb} 166 227 233 {alpha} 255
+        display_text {pos} -92.0 8.0 {key} 'KSA_INT'
+
+        set_text_scale {width} 0.30 {height} 1.10
+        set_text_colour {rgb} 203 195 227 {alpha} 255
+        display_text {pos} -92.0 31.0 {key} 'KSA_TOG'
+        continue
+    end
+
+    if
+        target = get_char_player_is_targeting $player1
+    then
+        modelId = get_char_model target
+        health = get_char_health target
+
+        set_text_font {font} Font.Menu
+        set_text_proportional {state} true
+        set_text_centre {state} false
+        set_text_wrapx {width} 640.0
+        set_text_background {state} false
+        set_text_edge {size} 2 {rgb} 16 20 30 {alpha} 230
+        set_text_scale {width} 0.36 {height} 1.35
+        set_text_colour {rgb} 166 227 233 {alpha} 255
+        display_text {pos} -92.0 8.0 {key} 'KSA_PED'
+
+        set_text_scale {width} 0.30 {height} 1.10
+        set_text_colour {rgb} 203 195 227 {alpha} 255
+        display_text_with_number {pos} -92.0 32.0 {key} 'KSA_MOD' {num} modelId
+
+        set_text_colour {rgb} 183 228 199 {alpha} 255
+        display_text_with_number {pos} -92.0 52.0 {key} 'KSA_HP' {num} health
+        continue
+    end
+
+    if
+        is_char_sitting_in_any_car $scplayer
+    then
+        vehicle = store_car_char_is_in_no_save $scplayer
+        vehicleModel = get_car_model vehicle
+        vehicleHealth = get_car_health vehicle
+        vehicleKey = get_name_of_vehicle_model vehicleModel
+
+        set_text_font {font} Font.Menu
+        set_text_proportional {state} true
+        set_text_centre {state} false
+        set_text_wrapx {width} 640.0
+        set_text_background {state} false
+        set_text_edge {size} 2 {rgb} 16 20 30 {alpha} 230
+        set_text_scale {width} 0.36 {height} 1.35
+        set_text_colour {rgb} 166 227 233 {alpha} 255
+        display_text {pos} -92.0 8.0 {key} 'KSA_VEH'
+
+        set_text_scale {width} 0.30 {height} 1.10
+        set_text_colour {rgb} 203 195 227 {alpha} 255
+        display_text {pos} -92.0 31.0 {key} vehicleKey
+
+        set_text_colour {rgb} 255 218 185 {alpha} 255
+        display_text_with_number {pos} -92.0 51.0 {key} 'KSA_MOD' {num} vehicleModel
+        set_text_colour {rgb} 183 228 199 {alpha} 255
+        display_text_with_number {pos} -92.0 71.0 {key} 'KSA_HP' {num} vehicleHealth
+    end
+end
+
+terminate_this_script
