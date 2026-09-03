@@ -1,0 +1,65 @@
+name: Bug report
+description: Report a reproducible problem with KSA Quick ID Inspector
+title: "[Bug] "
+body:
+  - type: checkboxes
+    attributes:
+      label: Before submitting
+      options:
+        - label: I tested the latest release of KSA Quick ID Inspector.
+          required: true
+        - label: I am using GTA San Andreas 1.0 US with CLEO 4.4 or newer.
+          required: true
+
+  - type: textarea
+    attributes:
+      label: Problem
+      description: Describe what went wrong.
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Steps to reproduce
+      description: List the steps needed to reproduce the problem.
+      placeholder: |
+        1. Start the game
+        2. Load a save
+        3. Aim at a pedestrian
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Expected result
+      description: Describe what you expected to happen.
+    validations:
+      required: true
+
+  - type: input
+    attributes:
+      label: Installed versions
+      description: Include your game, CLEO and Mod Loader versions.
+      placeholder: GTA SA 1.0 US, CLEO 4.4, Mod Loader 0.3.7
+    validations:
+      required: true
+
+  - type: dropdown
+    attributes:
+      label: Installation method
+      options:
+        - Mod Loader
+        - Direct CLEO installation
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Relevant logs
+      description: Paste relevant CLEO or Mod Loader log lines. Remove personal information first.
+      render: text
+
+  - type: textarea
+    attributes:
+      label: Additional information
+      description: Add any other useful details, screenshots or compatibility observations.
