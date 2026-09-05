@@ -52,6 +52,8 @@ SilentPatch and Widescreen Fix on Windows 11.
 Open `src/KSA_Quick_ID_Inspector.txt` in Sanny Builder 4.2 or newer. Select
 `GTA SA (v1.0 - SBL)` and compile the script.
 
+Follow the [manual testing guide](docs/manual-testing.md) before preparing a release.
+
 ## Credits
 
 - Mod author: KSAGlory
