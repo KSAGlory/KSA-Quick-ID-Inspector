@@ -32,6 +32,14 @@ Record the following information before beginning:
 3. Damage a vehicle and confirm that the health value updates.
 4. Exit the vehicle and verify that stale vehicle information is cleared.
 
+## Repeated vehicle transitions
+
+1. Enter a vehicle and note the displayed name, model ID, and health value.
+2. Exit the vehicle and confirm that all vehicle details disappear immediately.
+3. Enter a different vehicle and confirm that every displayed field updates to the new vehicle.
+4. Repeat the enter-and-exit cycle at least five times, alternating vehicles when possible.
+5. After the final exit, wait several seconds and confirm that no outdated vehicle information reappears.
+
 ## Toggle and presentation
 
 1. Type `KSAID` and confirm that the interface is disabled.
