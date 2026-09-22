@@ -1,4 +1,4 @@
-# Manual Testing Guide
+# Manual testing guide
 
 Use a separate test save and back up important game files before validating a new build.
 
@@ -49,4 +49,4 @@ Record the following information before beginning:
 
 ## Reporting results
 
-Record every failed step with reproduction instructions and the relevant log lines. Remove usernames, personal paths, and unrelated private information before sharing logs.
+Record every failed step with reproduction instructions and the relevant log lines. Remove usernames, personal paths, and unrelated private information before sharing logs. Follow [SUPPORT.md](../SUPPORT.md) to report a problem.

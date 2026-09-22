@@ -1,10 +1,10 @@
 # Contributing
 
-Thanks for helping improve KSA Quick ID Inspector. Bug reports, compatibility notes and focused code improvements are welcome.
+Contributions may include bug fixes, compatibility reports, tests, and documentation improvements.
 
 ## Reporting a bug
 
-Before opening an issue:
+Use [GitHub Issues](https://github.com/KSAGlory/KSA-Quick-ID-Inspector/issues) for bug reports. Before posting:
 
 1. Confirm that you are using GTA San Andreas 1.0 US and CLEO 4.4 or newer.
 2. Test the latest release of the mod.
