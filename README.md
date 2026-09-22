@@ -1,68 +1,78 @@
 # KSA Quick ID Inspector
 
-A lightweight in-game model inspector for Grand Theft Auto: San Andreas.
+Identify pedestrian and vehicle models in Grand Theft Auto: San Andreas without leaving the game.
 
-KSA Quick ID Inspector shows useful pedestrian and vehicle information without
-opening a menu or leaving the game. It is designed for players, mod testers and
-creators who regularly need to identify replacement models.
+KSA Quick ID Inspector is a lightweight CLEO script for players, mod testers, and creators who need model information while they work. Aim at a pedestrian or enter a vehicle and the relevant details appear in a compact overlay.
 
-## Features
+## Highlights
 
-- Shows a targeted pedestrian's model ID and health.
-- Shows the current vehicle's name, model ID and health.
-- Uses a compact pastel interface with widescreen-friendly positioning.
-- Can be enabled or disabled at any time by typing `KSAID`.
-- Does not modify saves or store persistent game data.
+- View a targeted pedestrian's model ID and health
+- See the current vehicle's name, model ID, and health
+- Toggle the overlay at any time with the `KSAID` cheat code
+- Use a clean, widescreen-friendly interface designed to stay out of the way
+- Run entirely in-game without saves, accounts, or persistent data
+
+## Download
+
+Download the latest ready-to-use package from the [Releases page](https://github.com/KSAGlory/KSA-Quick-ID-Inspector/releases).
 
 ## Requirements
 
-- GTA San Andreas 1.0 US
+- Grand Theft Auto: San Andreas 1.0 US
 - CLEO 4.4 or newer
-- Mod Loader is recommended
+- Mod Loader is recommended for a cleaner installation
 
 ## Installation
 
 ### Mod Loader
 
-1. Download the latest release archive.
-2. Extract `KSA Quick ID Inspector` into the game's `modloader` folder.
-3. Start the game and load any save.
+1. Open your GTA San Andreas installation folder.
+2. Copy the `KSA Quick ID Inspector` folder into `modloader`.
+3. Start the game.
 
 ### Direct CLEO installation
 
-Copy `KSA_Quick_ID_Inspector.cs` into the game's `cleo` folder.
+1. Copy `KSA_Quick_ID_Inspector.cs` into the game's `CLEO` folder.
+2. Start the game.
 
-## Usage
+## Using the inspector
 
-- Aim at a pedestrian to display their model ID and health.
-- Sit inside a vehicle to display its name, model ID and health.
-- Type `KSAID` during gameplay to toggle the inspector.
+- Type `KSAID` during gameplay to enable or disable the overlay.
+- Aim at a pedestrian to view their model ID and health.
+- Enter a vehicle to view its name, model ID, and health.
+
+The overlay only appears when there is useful information to show.
 
 ## Compatibility
 
-Version 1.0.0 was tested with GTA San Andreas 1.0 US, CLEO 4.4, Mod Loader,
-SilentPatch and Widescreen Fix on Windows 11.
+The current release was tested on Windows 11 with SilentPatch and Widescreen Fix. Other CLEO-based setups may also work, but they have not been verified yet.
 
-## Demo
+## Demonstration
 
-[Watch the gameplay demonstration on YouTube](https://youtu.be/w8T4KTzMMQo)
+Watch the [KSA Quick ID Inspector demo](https://youtu.be/w8T4KTzMMQo) to see the script in use.
 
 ## Building from source
 
-Open `src/KSA_Quick_ID_Inspector.txt` in Sanny Builder 4.2 or newer. Select
-`GTA SA (v1.0 - SBL)` and compile the script.
+The editable source is available in `src/KSA_Quick_ID_Inspector.txt`.
 
-Follow the [manual testing guide](docs/manual-testing.md) before preparing a release.
+1. Open the file in Sanny Builder 4.2 or newer.
+2. Select the GTA San Andreas v1.0 SBL.
+3. Compile the script.
+4. Copy the generated `.cs` file into the game's `CLEO` folder or a Mod Loader package.
 
-## Credits
+See [docs/manual-testing.md](docs/manual-testing.md) for the release testing checklist.
 
-- Mod author: KSAGlory
-- Built with Sanny Builder and CLEO
+## Contributing
 
-## Community
-
-Discord: [discord.gg/ksahub](https://discord.gg/ksahub)
+Bug reports and focused improvements are welcome. Please read [CONTRIBUTING.md](CONTRIBUTING.md) before opening a pull request.
 
 ## License
 
-KSA Quick ID Inspector is released under the MIT License.
+This project is available under the [MIT License](LICENSE).
+
+## Author and community
+
+- Author: **KSAGlory**
+- Community: [discord.gg/ksahub](https://discord.gg/ksahub)
+
+Copyright © 2026 KSAGlory. All rights reserved.
